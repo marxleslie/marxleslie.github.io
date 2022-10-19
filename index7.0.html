@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<meta name="description" content="This is an awesome website!">
+        <meta name="author" content="Kenny Gong">
+        <meta name="keywords" content="Economics, Coordinated Effects">
+        <!--This meta tag adds keywords to make google searches more efficient-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--This meta tag scales the website depending on the width of the device-->
+		<title>Coordinated Effects</title>
+        <link href="CooEffcss7.0.css" rel="stylesheet"/>
+	</head>
+    <div id="container0">
+        <body>
+            <div id="container1">
+                <h1><big>Coordinated Effects</big></h1>
+                <p>Duke University | Dr. Leslie Marx | Wesbite created by Kenny Gong - kenneth.gong@duke.edu</p>
+                <img width="100" src="https://www.heraldry-wiki.com/heraldrywiki/images/6/60/Duke-uni.jpg" alt="Duke University Sigil" />
+                <hr/>
+                <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+                <div id="Home" class="tabcontent">
+                    <h3>Home</h3>
+                    <p>Home is where the heart is..</p>
+                </div>
+                <p>This website is a tool that will return the alpha values of each firm when given the market shares of up to ten firms.</p>
+                <p><b>Input market shares with corresponding firms. If calculating less than 10 alpha values, leave input of unused firms as 0.0. Please make sure that the market shares add up to 100!</b></p>
+            </div>
+        </body>
+    <body>
+        <div class="container1">
+            <div class="floatLeft">
+                <table border="1">
+                    <tr>
+                        <th>Firm<sub>i</sub></th>
+                        <th>Market Share i</th> <!--is there an abbreviation for market share?-->
+                        <th>Coordinating Firms</th>
+                        <th>Merging Firms</th>
+                        <th style="width:30%">α<sub>i</sub></th>
+                        <th style="width:30%">s<sub>i</sub><sup>K</sup></th>
+                    </tr>
+                    <tr>
+                        <td style="height:40px">1</td>
+                        <td><input id="ms1" type="text" value="0.0"/></td>
+                        <td><input id="cb1" type="checkbox" name="checkbox1" value="1"></td>
+                        <td><input id="cb11" type="checkbox" name="checkbox1" value="1"></td>
+                        <td><p2>0.0</p2></td>
+                        <td><p12>0.0</p12></td>
+                        <!--Tried valign="top" to bring text to top of cell, but it didn't align with texts of other rows so it looked ugly!-->
+                    </tr>
+                    <tr>
+                        <td style="height:40px">2</td>
+                        <td><input id="ms2" type="text" value="0.0"/></td>
+                        <td><input id="cb2" type="checkbox"></td>
+                        <td><input id="cb12" type="checkbox"></td>
+                        <td><p3>0.0</p3></td>
+                        <td><p13>0.0</p13></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">3</td>
+                        <td><input id="ms3" type="text" value="0.0"/></td>
+                        <td><input id="cb3" type="checkbox"></td>
+                        <td><input id="cb13" type="checkbox"></td>
+                        <td><p4>0.0</p4></td>
+                        <td><p14>0.0</p14></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">4</td>
+                        <td><input id="ms4" type="text" value="0.0"/></td>
+                        <td><input id="cb4" type="checkbox"></td>
+                        <td><input id="cb14" type="checkbox"></td>
+                        <td><p5>0.0</p5></td>
+                        <td><p15>0.0</p15></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">5</td>
+                        <td><input id="ms5" type="text" value="0.0"/></td>
+                        <td><input id="cb5" type="checkbox"></td>
+                        <td><input id="cb15" type="checkbox"></td>
+                        <td><p6>0.0</p6></td>
+                        <td><p16>0.0</p16></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">6</td>
+                        <td><input id="ms6" type="text" value="0.0"/></td>
+                        <td><input id="cb6" type="checkbox"></td>
+                        <td><input id="cb16" type="checkbox"></td>
+                        <td><p7>0.0</p7></td>
+                        <td><p17>0.0</p17></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">7</td>
+                        <td><input id="ms7" type="text" value="0.0"/></td>
+                        <td><input id="cb7" type="checkbox"></td>
+                        <td><input id="cb17" type="checkbox"></td>
+                        <td><p8>0.0</p8></td>
+                        <td><p18>0.0</p18></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">8</td>
+                        <td><input id="ms8" type="text" value="0.0"/></td>
+                        <td><input id="cb8" type="checkbox"></td>
+                        <td><input id="cb18" type="checkbox"></td>
+                        <td><p9>0.0</p9></td>
+                        <td><p19>0.0</p19></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">9</td>
+                        <td><input id="ms9" type="text" value="0.0"/></td>
+                        <td><input id="cb9" type="checkbox"></td>
+                        <td><input id="cb19" type="checkbox"></td>
+                        <td><p10>0.0</p10></td>
+                        <td><p20>0.0</p20></td>                
+                    </tr>
+                    <tr>
+                        <td style="height:40px">10</td>
+                        <td><input id="ms10" type="text" value="0.0"/></td>
+                        <td><input id="cb10" type="checkbox"></td>
+                        <td><input id="cb20" type="checkbox"></td>
+                        <td><p11>0.0</p11></td>
+                        <td><p21>0.0</p21></td>                
+                    </tr>
+                </table>
+            </div>
+            <div class="floatRight">
+                <table border="1" align="right">
+                    <tr>
+                        <th style="width:15%">CEI<sub>pre-merger</sub></th>
+                        <th style="width:15%">HHI<sub>pre-merger</sub></th>
+                        <th style="width:15%">CEI<sub>post-merger</sub></th> 
+                        <th style="width:15%">HHI<sub>post-merger</sub></th>
+        
+                    </tr>
+                    <tr>
+                        <td rowspan="10"><p22>0.0</p22></td>
+                        <td><p23>0.0</p23></td>
+                        <td><p24>0.0</p24></td>
+                        <td><p25>test</p25></td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <div class="floatRight">
+                <table border="1" align="right">
+                    <tr>
+                        <th style="width:15%"><p26>ERROR BOX</p26></th>
+                    </tr>
+                    <tr>
+                        <th style="width:15%"><p26><input id="m" type="text" value="Margin for Firm 1"/></p26></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <button id="submit">Submit</button>
+    </body>
+        <script src="CooEffjs7.0.js"></script>
+    </div>
+</html>

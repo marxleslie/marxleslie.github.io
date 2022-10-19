@@ -1,0 +1,17 @@
+/*h1 {
+    color: brown;
+}
+body {
+    background-color: whitesmoke;
+}
+#container0 {
+    background-color: lightblue;
+    color: darkblue;
+}
+#container1 {
+    width: 1000 px;
+}*/
+
+.floatLeft { width: 50%; float: left; }
+.floatRight {width: 50%; float: right; }
+.container1 { overflow: hidden; }

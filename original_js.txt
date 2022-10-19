@@ -1,0 +1,824 @@
+
+//When the user inputs the market share values, the javascript code calculates and returns the respective market share values
+
+//Get access to the button and set up a click event handler 
+
+var button = document.getElementById("submit");
+//This gives access to the submit button
+button.onclick = alphaValues;
+//Once submit button is pressed, it calls function alphaValues
+
+function alphaValues() {
+  var output1 = document.getElementsByTagName("p2")[0];
+  var output2 = document.getElementsByTagName("p3")[0];
+  var output3 = document.getElementsByTagName("p4")[0];
+  var output4 = document.getElementsByTagName("p5")[0];
+  var output5 = document.getElementsByTagName("p6")[0];
+  var output6 = document.getElementsByTagName("p7")[0];
+  var output7 = document.getElementsByTagName("p8")[0];
+  var output8 = document.getElementsByTagName("p9")[0];
+  var output9 = document.getElementsByTagName("p10")[0];
+  var output10 = document.getElementsByTagName("p11")[0];
+
+  var output11 = document.getElementsByTagName("p12")[0];
+  var output12 = document.getElementsByTagName("p13")[0];
+  var output13 = document.getElementsByTagName("p14")[0];
+  var output14 = document.getElementsByTagName("p15")[0];
+  var output15 = document.getElementsByTagName("p16")[0];
+  var output16 = document.getElementsByTagName("p17")[0];
+  var output17 = document.getElementsByTagName("p18")[0];
+  var output18 = document.getElementsByTagName("p19")[0];
+  var output19 = document.getElementsByTagName("p20")[0];
+  var output20 = document.getElementsByTagName("p21")[0];
+
+  var output21 = document.getElementsByTagName("p22")[0]; /* do we need index here?*/
+  var output22 = document.getElementsByTagName("p23")[0];
+  var output23 = document.getElementsByTagName("p24")[0];
+  var output24 = document.getElementsByTagName("p25")[0];
+
+  
+
+
+  var share1 = parseFloat(document.getElementById("ms1").value);
+  var share2 = parseFloat(document.getElementById("ms2").value);
+  var share3 = parseFloat(document.getElementById("ms3").value);
+  var share4 = parseFloat(document.getElementById("ms4").value);
+  var share5 = parseFloat(document.getElementById("ms5").value);
+  var share6 = parseFloat(document.getElementById("ms6").value);
+  var share7 = parseFloat(document.getElementById("ms7").value);
+  var share8 = parseFloat(document.getElementById("ms8").value);
+  var share9 = parseFloat(document.getElementById("ms9").value);
+  var share10 = parseFloat(document.getElementById("ms10").value);
+
+  var cf1 = document.getElementById("cb1");
+  var cf2 = document.getElementById("cb2");
+  var cf3 = document.getElementById("cb3");
+  var cf4 = document.getElementById("cb4");
+  var cf5 = document.getElementById("cb5");
+  var cf6 = document.getElementById("cb6");
+  var cf7 = document.getElementById("cb7");
+  var cf8 = document.getElementById("cb8");
+  var cf9 = document.getElementById("cb9");
+  var cf10 = document.getElementById("cb10");
+
+  var cf11 = document.getElementById("cb11");
+  var cf12 = document.getElementById("cb12");
+  var cf13 = document.getElementById("cb13");
+  var cf14 = document.getElementById("cb14");
+  var cf15 = document.getElementById("cb15");
+  var cf16 = document.getElementById("cb16");
+  var cf17 = document.getElementById("cb17");
+  var cf18 = document.getElementById("cb18");
+  var cf19 = document.getElementById("cb19");
+  var cf20 = document.getElementById("cb20");
+
+  ************************************************************* --indicates we've used all previous code
+
+  var list = [share1, share2, share3, share4, share5, share6, share7, share8, share9, share10]
+  var listLength = list.length
+  let sum = 0
+  for (let i = 0; i < list.length; i++) {
+    sum += list[i];
+  } 
+  var num = 0
+  for (var i = 0; i < list.length; i++) {
+    if (parseFloat(list[i]) != 0.0) {
+      num += 1
+    }
+  }
+  var newList = []
+  for (var i = 0; i < list.length; i++) {
+    newList[i] = num * list[i]
+  }
+  finalList = []
+  for (var i = 0; i < list.length; i++) {
+    if (parseFloat(newList[i]) == 0.0) {
+      finalList[i] = "N/A"
+    }
+    if (parseFloat(newList[i]) != 0.0) {
+      finalList[i] = newList[i]
+    }
+  }
+
+  for (i = 0; i < finalList.length; i++) {
+    if (finalList[i] != 'N/A') {
+      finalList[i] = finalList[i]/100
+    }
+    if (finalList[i] == 'N/A') {
+      finalList[i] = 'N/A'
+    }
+  }
+
+  if (parseFloat(Math.round(1000*sum)/1000) != 100) {
+    finalList[0] = "Market Shares must sum to 100!" 
+    finalList[1] = "Market Shares must sum to 100!"
+    finalList[2] = "Market Shares must sum to 100!"
+    finalList[3] = "Market Shares must sum to 100!"
+    finalList[4] = "Market Shares must sum to 100!"
+    finalList[5] = "Market Shares must sum to 100!"
+    finalList[6] = "Market Shares must sum to 100!"
+    finalList[7] = "Market Shares must sum to 100!"
+    finalList[8] = "Market Shares must sum to 100!"
+    finalList[9] = "Market Shares must sum to 100!"
+
+    output11.innerHTML = 'N/A'
+    output12.innerHTML = 'N/A'
+    output13.innerHTML = 'N/A'
+    output14.innerHTML = 'N/A'
+    output15.innerHTML = 'N/A'
+    output16.innerHTML = 'N/A'
+    output17.innerHTML = 'N/A'
+    output18.innerHTML = 'N/A'
+    output19.innerHTML = 'N/A'
+    output20.innerHTML = 'N/A'
+
+    output21.innerHTML = 'N/A'
+
+
+  }
+  for (var i = 0; i < listLength; i++) {
+    if (finalList[i] < 0) {
+      finalList[0] = "Market Shares cannot be negative!" 
+      finalList[1] = "Market Shares cannot be negative!"
+      finalList[2] = "Market Shares cannot be negative!"
+      finalList[3] = "Market Shares cannot be negative!"
+      finalList[4] = "Market Shares cannot be negative!"
+      finalList[5] = "Market Shares cannot be negative!"
+      finalList[6] = "Market Shares cannot be negative!"
+      finalList[7] = "Market Shares cannot be negative!"
+      finalList[8] = "Market Shares cannot be negative!"
+      finalList[9] = "Market Shares cannot be negative!"
+
+      output11.innerHTML = 'N/A'
+      output12.innerHTML = 'N/A'
+      output13.innerHTML = 'N/A'
+      output14.innerHTML = 'N/A'
+      output15.innerHTML = 'N/A'
+      output16.innerHTML = 'N/A'
+      output17.innerHTML = 'N/A'
+      output18.innerHTML = 'N/A'
+      output19.innerHTML = 'N/A'
+      output20.innerHTML = 'N/A'
+
+      output21.innerHTML = 'N/A'
+
+    }
+  }     
+  output1.innerHTML = finalList[0];
+  output2.innerHTML = finalList[1];
+  output3.innerHTML = finalList[2];
+  output4.innerHTML = finalList[3];
+  output5.innerHTML = finalList[4];
+  output6.innerHTML = finalList[5];
+  output7.innerHTML = finalList[6];
+  output8.innerHTML = finalList[7];
+  output9.innerHTML = finalList[8];
+  output10.innerHTML = finalList[9];
+
+  listAlphasOnly = []
+  for (var i = 0; i < listLength; i++) {
+    if (finalList[i] == "N/A") {
+      listAlphasOnly.push(0)
+    }
+    if (finalList[i] != "N/A") {
+      listAlphasOnly.push(finalList[i])
+    }
+  }
+  sumAlphas = 0
+  for (let i = 0; i < list.length; i++) {
+    sumAlphas += listAlphasOnly[i];
+  } 
+
+  var listNoCheck = []
+  var listNoi1 = []
+  var listNoi2 = []
+  var listNoi3 = []
+  var listNoi4 = []
+  var listNoi5 = []
+  var listNoi6 = []
+  var listNoi7 = []
+  var listNoi8 = []
+  var listNoi9 = []
+  var listNoi10 = []
+
+
+  if (cf1.checked) {
+    var listNoi1 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi1.push(listAlphasOnly[i])
+    }
+    spliced1 = listNoi1.splice(0,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[0])
+  }
+  if (cf2.checked) {
+    var listNoi2 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi2.push(listAlphasOnly[i])
+    }
+    spliced2 = listNoi2.splice(1,1)
+
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[1])
+  }
+  if (cf3.checked) {
+    var listNoi3 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi3.push(listAlphasOnly[i])
+    }
+    spliced3 = listNoi3.splice(2,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[2])
+  }
+  if (cf4.checked) {
+    var listNoi4 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi4.push(listAlphasOnly[i])
+    }
+    spliced4 = listNoi4.splice(3,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[3])
+  }
+  if (cf5.checked) {
+    var listNoi5 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi5.push(listAlphasOnly[i])
+    }
+    spliced5 = listNoi5.splice(4,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[4])
+  }
+  if (cf6.checked) {
+    var listNoi6 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi6.push(listAlphasOnly[i])
+    }
+    spliced6 = listNoi6.splice(5,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[5])
+  }
+  if (cf7.checked) {
+    var listNoi7 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi7.push(listAlphasOnly[i])
+    }
+    spliced7 = listNoi7.splice(6,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[6])
+  }
+  if (cf8.checked) {
+    var listNoi8 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi8.push(listAlphasOnly[i])
+    }
+    spliced8 = listNoi8.splice(7,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[7])
+  }
+  if (cf9.checked) {
+    var listNoi9 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi9.push(listAlphasOnly[i])
+    }
+    spliced9 = listNoi9.splice(8,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[8])
+  }
+  if (cf10.checked) {
+    var listNoi10 = []
+    for (i = 0; i < listLength; i++) {
+      listNoi10.push(listAlphasOnly[i])
+    }
+    spliced10 = listNoi10.splice(9,1)
+  }
+  else {
+    listNoCheck.push(listAlphasOnly[9])
+  }
+  
+  sumNoCheck = 0
+  for (i = 0; i < listNoCheck.length; i++) {
+    sumNoCheck += listNoCheck[i]
+  }
+
+  sumNoi1 = 0
+  sumNoi2 = 0
+  sumNoi3 = 0
+  sumNoi4 = 0
+  sumNoi5 = 0
+  sumNoi6 = 0
+  sumNoi7 = 0
+  sumNoi8 = 0
+  sumNoi9 = 0
+  sumNoi10 = 0
+
+  for (i = 0; i < listNoi1.length; i++) {
+    sumNoi1 += listNoi1[i]
+  }
+  for (i = 0; i < listNoi2.length; i++) {
+    sumNoi2 += listNoi2[i]
+  }
+  for (i = 0; i < listNoi3.length; i++) {
+    sumNoi3 += listNoi3[i]
+  }
+  for (i = 0; i < listNoi4.length; i++) {
+    sumNoi4 += listNoi4[i]
+  }
+  for (i = 0; i < listNoi5.length; i++) {
+    sumNoi5 += listNoi5[i]
+  }
+  for (i = 0; i < listNoi6.length; i++) {
+    sumNoi6 += listNoi6[i]
+  }
+  for (i = 0; i < listNoi7.length; i++) {
+    sumNoi7 += listNoi7[i]
+  }
+  for (i = 0; i < listNoi8.length; i++) {
+    sumNoi8 += listNoi8[i]
+  }
+  for (i = 0; i < listNoi9.length; i++) {
+    sumNoi9 += listNoi9[i]
+  }
+  for (i = 0; i < listNoi10.length; i++) {
+    sumNoi10 += listNoi10[i]
+  }
+
+  listS = []
+
+  
+  if (cf1.checked) {
+    S1k = ((1.0 + parseFloat(finalList[0]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi1)) * (1.0 + parseFloat(sumAlphas)))
+    output11.innerHTML = S1k
+    listS.push(S1k)
+  }
+  else {
+    S1k = 0.0
+    output11.innerHTML = 'N/A'
+    listS.push(S1k)
+  }
+  if (cf2.checked) {
+    S2k = ((1.0 + parseFloat(finalList[1]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi2)) * (1.0 + parseFloat(sumAlphas)))
+    output12.innerHTML = S2k
+    listS.push(S2k)
+  }
+  else {
+    S2k = 0.0
+    output12.innerHTML = 'N/A'
+    listS.push(S2k)
+  }
+  if (cf3.checked) {
+    S3k = ((1.0 + parseFloat(finalList[2]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi3)) * (1.0 + parseFloat(sumAlphas)))
+    output13.innerHTML = S3k
+    listS.push(S3k)
+  }
+  else {
+    S3k = 0.0
+    output13.innerHTML = 'N/A'
+    listS.push(S3k)
+  }
+  if (cf4.checked) {
+    S4k = ((1.0 + parseFloat(finalList[3]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi4)) * (1.0 + parseFloat(sumAlphas)))
+    output14.innerHTML = S4k
+    listS.push(S4k)
+  }
+  else {
+    S4k = 0.0
+    output14.innerHTML = 'N/A'
+    listS.push(S4k)
+  }
+  if (cf5.checked) {
+    S5k = ((1.0 + parseFloat(finalList[4]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi5)) * (1.0 + parseFloat(sumAlphas)))
+    output15.innerHTML = S5k
+    listS.push(S5k)
+  }
+  else {
+    S5k = 0.0
+    output15.innerHTML = 'N/A'
+    listS.push(S5k)
+  }
+  if (cf6.checked) {
+    S6khuh = ((1.0 + parseFloat(finalList[5]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi6)) * (1.0 + parseFloat(sumAlphas)))
+    output16.innerHTML = S6khuh
+    listS.push(S6khuh)
+  }
+  else {
+    S6khuh = 0.0
+    output16.innerHTML = 'N/A'
+    listS.push(S6khuh)
+  }
+  if (cf7.checked) {
+    S7k = ((1.0 + parseFloat(finalList[6]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi7)) * (1.0 + parseFloat(sumAlphas)))
+    output17.innerHTML = S7k
+    listS.push(S7k)
+  }
+  else {
+    S7k = 0.0
+    output17.innerHTML = 'N/A'
+    listS.push(S7k)
+  }
+  if (cf8.checked) {
+    S8k = ((1.0 + parseFloat(finalList[7]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi8)) * (1.0 + parseFloat(sumAlphas)))
+    output18.innerHTML = S8k
+    listS.push(S8k)
+  }
+  else {
+    S8k = 0.0
+    output18.innerHTML = 'N/A'
+    listS.push(S8k)
+  }
+  if (cf9.checked) {
+    S9k = ((1.0 + parseFloat(finalList[8]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi9)) * (1.0 + parseFloat(sumAlphas)))
+    output19.innerHTML = S9k
+    listS.push(S9k)
+  }
+  else {
+    S9k = 0.0
+    output19.innerHTML = 'N/A'
+    listS.push(S9k)
+  }
+  if (cf10.checked) {
+    S10k = ((1.0 + parseFloat(finalList[9]) + parseFloat(sumNoCheck)) * (1.0 + parseFloat(sumNoCheck))) / ((1.0 + parseFloat(sumNoi10)) * (1.0 + parseFloat(sumAlphas)))
+    output20.innerHTML = S10k
+    listS.push(S10k)
+  }
+  else {
+    S10k = 0.0
+    output20.innerHTML = 'N/A'
+    listS.push(S10k)
+  }
+
+  sumS = 0.0
+  for (let i = 0; i < listS.length; i++) {
+    sumS += listS[i];
+  }
+  
+  if (listS.length > 0) {
+    output21.innerHTML = (1.0 - sumS).toFixed(2)
+  }
+  else {
+    output21.innerHTML = 'N/A'
+  }
+
+  //CEI-pre returns N/A if CEI-pre == 1.00 (which indicates no coordinating firms)
+
+  if (output21.innerHTML == 1.00) {
+    output21.innerHTML = 'N/A'
+  }
+
+  //Calculates HHI
+  listHHI = []
+  for (let i = 0; i < listS.length; i++) {
+    listHHI.push(listS[i])
+  }
+
+
+  sumlistHHI = 0
+  for (i = 0; i < listHHI.length; i++) {
+    sumlistHHI += parseFloat(Math.pow(listHHI[i],2))
+  }
+
+  output23.innerHTML = sumlistHHI.toFixed(2)
+
+  //Creates alpha value for merged firms, resulting in n-1 alpha values
+  listMergedAlphas = []
+  listUnmergedAlphas = []
+  elseChecker = 0
+
+  if (cf11.checked && listAlphasOnly[0] != 0) {
+    listMergedAlphas.push(listAlphasOnly[0])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[0])
+  }
+  if (cf12.checked && listAlphasOnly[1] != 0) {
+    listMergedAlphas.push(listAlphasOnly[1])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[1])
+  }
+  if (cf13.checked && listAlphasOnly[2] != 0) {
+    listMergedAlphas.push(listAlphasOnly[2])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[2])
+  }
+  if (cf14.checked && listAlphasOnly[3] != 0) {
+    listMergedAlphas.push(listAlphasOnly[3])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[3])
+  }
+  if (cf15.checked && listAlphasOnly[4] != 0) {
+    listMergedAlphas.push(listAlphasOnly[4])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[4])
+  }
+  if (cf16.checked && listAlphasOnly[5] != 0) {
+    listMergedAlphas.push(listAlphasOnly[5])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[5])
+  }
+  if (cf17.checked && listAlphasOnly[6] != 0) {
+    listMergedAlphas.push(listAlphasOnly[6])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[6])
+  }
+  if (cf18.checked && listAlphasOnly[7] != 0) {
+    listMergedAlphas.push(listAlphasOnly[7])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[7])
+  }
+  if (cf19.checked && listAlphasOnly[8] != 0) {
+    listMergedAlphas.push(listAlphasOnly[8])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[8])
+  }
+  if (cf20.checked && listAlphasOnly[9] != 0) {
+    listMergedAlphas.push(listAlphasOnly[9])
+  }
+  else {
+    listUnmergedAlphas.push(listAlphasOnly[9])
+  }
+
+
+  //SumNoCheck Calculation for Post-Merger
+  //This segment checks if both a firm is both merging and coordinating
+  //if mKChecker is greater than 0, then merged firm is a part of K, a coordinating firm
+  //if mKChecker is equal to 0, then merged firm is not a part of firm, is not a coordinating firm
+
+  mKChecker = 0 
+
+  if (cf1.checked && cf11.checked) {
+    mKChecker += 1
+  }
+  if (cf2.checked && cf12.checked) {
+    mKChecker += 1
+  }
+  if (cf3.checked && cf13.checked) {
+    mKChecker += 1
+  }
+  if (cf4.checked && cf14.checked) {
+    mKChecker += 1
+  }
+  if (cf5.checked && cf15.checked) {
+    mKChecker += 1
+  }
+  if (cf6.checked && cf16.checked) {
+    mKChecker += 1
+  }
+  if (cf7.checked && cf17.checked) {
+    mKChecker += 1
+  }
+  if (cf8.checked && cf18.checked) {
+    mKChecker += 1
+  }
+  if (cf9.checked && cf19.checked) {
+    mKChecker += 1
+  }
+  if (cf10.checked && cf20.checked) {
+    mKChecker += 1
+  }
+
+
+  //Begin to create the list of new alphas, including merged firm 
+  
+  sumMergedAlphas = 0
+  for (i = 0; i < listMergedAlphas.length; i++) {
+    sumMergedAlphas += listMergedAlphas[i]
+  }
+  listNewAlphas = listUnmergedAlphas
+  //listNewAlphas becomes the list of alphas with the sum of the merged firms, thus including the new merged firm
+  listNewAlphas.push(sumMergedAlphas)
+  for (i = 0; i < listNewAlphas.length; i++) {
+    if (listNewAlphas[i] == 0) {
+      listNewAlphas.splice(i, 1)
+      i -= 1
+    }
+  }
+  //The following code will get rid of merged firm from listNoCheck2 at least one of the merging firms is also coordinating
+  listNoCheck2 = []
+  for (i = 0; i < listNewAlphas.length; i++) {
+    listNoCheck2.push(listNewAlphas[i])
+  }
+
+  if (mKChecker > 0) {
+    listNoCheck2.splice(listNoCheck2.length - 1, 1)
+  }
+  //In order to get rid of other coordinating firms from listNoCheck2, we use the following method
+  //Create a list of lists, with the first element of the inner list being a newAlpha value (Alpha with merged value)
+  //and the second element of the inner list being 0 or 1, with 1 indicating that it is ONLY coordinating and
+  //NOT merging 
+
+  listCoordOnly = []
+
+  if (cf1.checked && cf11.checked == false) {
+    listCoordOnly.push([listAlphasOnly[0], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[0], 0])
+  }
+  if (cf2.checked && cf12.checked == false) {
+    listCoordOnly.push([listAlphasOnly[1], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[1], 0])
+  }
+  if (cf3.checked && cf13.checked == false) {
+    listCoordOnly.push([listAlphasOnly[2], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[2], 0])
+  }
+  if (cf4.checked && cf14.checked == false) {
+    listCoordOnly.push([listAlphasOnly[3], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[3], 0])
+  }
+  if (cf5.checked && cf15.checked == false) {
+    listCoordOnly.push([listAlphasOnly[4], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[4], 0])
+  }
+  if (cf6.checked && cf16.checked == false) {
+    listCoordOnly.push([listAlphasOnly[5], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[5], 0])
+  }
+  if (cf7.checked && cf17.checked == false) {
+    listCoordOnly.push([listAlphasOnly[6], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[6], 0])
+  }
+  if (cf8.checked && cf18.checked == false) {
+    listCoordOnly.push([listAlphasOnly[7], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[7], 0])
+  }
+  if (cf9.checked && cf19.checked == false) {
+    listCoordOnly.push([listAlphasOnly[8], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[8], 0])
+  }
+  if (cf10.checked && cf20.checked == false) {
+    listCoordOnly.push([listAlphasOnly[9], 1])
+  } 
+  else {
+    listCoordOnly.push([listAlphasOnly[9], 0])
+  }
+
+  //The following code removes alpha value from listNoCheck2 if it exists in listNoCheck2 and listCoordOnly, and if
+  //its corresponding second element in listCoordOnly is 1
+
+  for (i = 0; i < listCoordOnly.length; i++) {
+    if (listNoCheck2.includes(listCoordOnly[i][0]) == true && listCoordOnly[i][1] == 1) {
+      myIndex = listNoCheck2.indexOf(listCoordOnly[i][0])
+      listNoCheck2.splice(myIndex, 1)
+    }
+  }
+
+  //At this point, we should have an accurate listNoCheck2 and listNewAlphas. This should give us all the tools
+  //needed to compute CEI Post Merger
+
+  //Sum listNewAlphas and listNoCheck2
+  sumNewAlphas = 0
+  for (let i = 0; i < listNewAlphas.length; i++) {
+    sumNewAlphas += listNewAlphas[i];
+  }
+
+  sumNoCheck2 = 0
+  for (let i = 0; i < listNoCheck2.length; i++) {
+    sumNoCheck2 += listNoCheck2[i];
+  }
+
+  //I believe this is where you're going wrong
+  //for generic example (5 10 15 70, first 3 coord, first 2 merging)
+  //There are three values in listS2. There should be 2. 
+  //We need to make a list with checked values only.
+  //In this case it would be 0.6 and 0.6
+  //Perhaps we can do this by looping through listNoCheck and then removing those values to get only the checked values
+  //From there we can replace listNewAlphas with listNoCheck instead
+  
+  //we should create a new listNoChecked2, so we can splice the values out when creating our listChecked
+
+  listNoCheck2DUP = []
+  for (let i = 0; i < listNoCheck2.length; i++) {
+    listNoCheck2DUP.push(listNoCheck2[i]);
+  }
+
+  listChecked = []
+  for (let i = 0; i < listNewAlphas.length; i++) {
+    if ((listNoCheck2DUP.includes(listNewAlphas[i])) === false) {
+      listChecked.push(listNewAlphas[i])
+      }
+    if ((listNoCheck2DUP.includes(listNewAlphas[i])) === true) {
+      listNoCheck2DUP.splice(listNoCheck2DUP.indexOf(listNewAlphas[i]), 1)
+      }
+  }
+
+
+  //Now we begin to create the list of S for the new Alpha values, with merged firm
+  listS2 = []
+  for (let i = 0; i < listChecked.length; i++) {
+    //initialize newListNoi, identical to listNewAlphas, but missing i'th index
+    newListNoi = []
+    for (let j = 0; j < listChecked.length; j++) {
+      newListNoi.push(listChecked[j])
+    }
+    newListNoi.splice(i, 1)
+    //takes the sum of newListNoi
+    newSumNoi = 0
+    for (let k = 0; k < newListNoi.length; k++) {
+      newSumNoi += newListNoi[k]
+    }
+
+    SiK = ((1 + listChecked[i] + sumNoCheck2) * (1 + sumNoCheck2)) / ((1 + newSumNoi) * (1 + sumNewAlphas))
+    listS2.push(SiK)
+  }
+
+  //to get CEI post merger, we just sum listS2 and then subtract that from 1
+  sumS2 = 0
+  for (let i = 0; i < listS2.length; i++) {
+    sumS2 += listS2[i];
+  }
+  
+  CEIpost = 1 - sumS2
+  output22.innerHTML = CEIpost.toFixed(2)
+
+
+  //Checks if no firms are merging, and prohibits only one firm merging
+  if (mKChecker == 0) {
+    output22.innerHTML = 'N/A'
+  }
+
+  if (mKChecker == 1) {
+    output22.innerHTML = 'Must have 2 or more merged firms'
+  }
+
+  output24.innerHTML = listChecked
+
+
+
+
+  /*if (finalList[9] = "Market Shares must sum to 100!") {
+    output11.innerHTML = 'N/A'
+    output12.innerHTML = 'N/A'
+    output13.innerHTML = 'N/A'
+    output14.innerHTML = 'N/A'
+    output15.innerHTML = 'N/A'
+    output16.innerHTML = 'N/A'
+    output17.innerHTML = 'N/A'
+    output18.innerHTML = 'N/A'
+    output19.innerHTML = 'N/A'
+    output20.innerHTML = 'N/A'
+
+    output21.innerHTML = 'N/A'
+  }
+
+  if (finalList[9] = "Market Shares cannot be negative!") {
+    output11.innerHTML = 'N/A'
+    output12.innerHTML = 'N/A'
+    output13.innerHTML = 'N/A'
+    output14.innerHTML = 'N/A'
+    output15.innerHTML = 'N/A'
+    output16.innerHTML = 'N/A'
+    output17.innerHTML = 'N/A'
+    output18.innerHTML = 'N/A'
+    output19.innerHTML = 'N/A'
+    output20.innerHTML = 'N/A'
+
+    output21.innerHTML = 'N/A'
+  }*/
+
+}
+
+/*
+
+Problems with this code June 8, 2022:
+
+  1. SUPER UGLY. Not very readable. A lot can be condensed with loops, which will make it more readable and allow for better dynamic programming (so eventually user can input number of market shares they wish to input
+
+  2. If selected coordinating firm does not have a corresponding alpha value, returns NaN instead of N/A. This is not a big problem, although you may want to fix this eventually
+
+  3. Addition is being strange. For example, when checking if the market shares add to 100, even if the markets shares do add to 100, js math thinks it adds to something really close (eg 99.9999999) and the if statement fails
+*/
+
+
